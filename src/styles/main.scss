@@ -11,6 +11,7 @@
 // @import "components/sprite";
 
 $light-color: #fff; //Создаем переменную цвета, чтобы в последующем могли всё это изменить за раз.
+$accent-color: #65e496;
 
 h1, h2, h3, h4, p {
     padding: 0;
@@ -21,17 +22,27 @@ body{
     font-family: 'Roboto Slab', serif; //Пременяем подключенный шрифт, к тегу boddy
 }
 
+.wrap{
+    max-width: 1170px; // Создаём максимальную ширену для всей обёртки
+    margin: 0 auto; // Убираем отступы и задаем свойство АВТО, что выравнивает содержимое всей обёртки по центру
+}
+
 .page-main { // Это наш основной блок с контентом, находящимся на верху
     color: $light-color; // В блоке устанавливаем цвет текста, с помощью нашей переменной
     background-image: url(../img/bg.png) ; // Задаем фаил фона
     background-repeat: no-repeat; // Пишем свойство, чтобы картинка фона не повторялась
     background-size: cover; //Масштабирует картинку так, чтобы она накрыла собой весь блок с сохранением пропорций.
+    padding-bottom: 50px;
 }
 
 .header{
+    padding-bottom: 166px;
+    padding-top: 36px;
     display: flex; //После установки данных значений свойства каждый дочерний элемент автоматически становится flex-элементом, выстраиваясь в один ряд (вдоль главной оси). При этом блочные и строчные дочерние элементы ведут себя одинаково, т.е. ширина блоков равна ширине их содержимого с учетом внутренних полей и рамок элемента.
     justify-content: space-between; // Задаем пустое растояние между элементами
     align-items: center; //Свойство align-items задает выравнивание элементов вдоль поперечной оси. Применяется к: родительскому элементу для flex блоков.
+    max-width: 1170px; // Создаём максимальную ширену для блока
+    margin: 0 auto; // Убираем отступы и задаем свойство АВТО, что выравнивает содержимое по центру
     &__logo { // Так-как у нас элемент LOGO вложен в блок HEADER, мы просто здесь же создаем для него стиль, с помощью & и двойного подчёркивания.
         background-repeat: no-repeat;
         display: block; //Блочные элементы располагаются один над другим, вертикально (если нет особых свойств позиционирования, например float). Блок стремится расшириться на всю доступную ширину. Можно указать ширину и высоту явно.
@@ -43,8 +54,76 @@ body{
         list-style-type: none; // Отключаем стилизацию списка. (Убираем точки)
         display: flex; // Устанавливаем, что это flex эллемент. display: flex; делает все дочерние элементы резиновыми — flex, а не инлайновыми или блочными, как было изначально.
         justify-content: flex-end; //элементы выравниваются от конца главной оси;
+        font-family: 'Open Sans', serif;
         &__item{
-            margin-left: 15px; // Задаем внешний отступ слева, для каждого пункта
+            margin-left: 22px; // Задаем внешний отступ слева, для каждого пункта
+            padding-bottom: 5px;
+            border-bottom: 3px solid transparent; // Делаем черту невидимой
+            transition: 0,5s; // Создаём переход в 0,3 секунды
+            &:hover{border-bottom: 3px solid $accent-color;}// Для псевдо класов можем использовать такой вид записи. При наведении на ссылку, через 0,3 сек. появится стиль
         }
+        &__item.active{ // Создаём стиль для подкласса, чтобы сделать активный выбр ссылок
+            border-bottom: 3px solid $accent-color;
+        }
+        &__link{
+            color: $light-color;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+    }
+}
+
+.block-text{
+    flex-basis: calc(93% - 500px);
+    &__name{
+        font-family: 'Open Sans', serif;
+        font-size: 18px;
+    }
+    &__title{
+        letter-spacing: 1,8px;
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 44px;
+        span{
+            display: block; // для того чтобы элемент позицианировался не в строчку, а с новый строки
+            color: $accent-color;
+            font-size: 18px;
+            margin-top: 9px;
+            letter-spacing: 0,9px;
+        }
+    }
+    &__description{
+        font-family: 'Open Sans', serif;
+        font-size: 15px;
+        line-height: 24px;
+        margin-bottom: 24px;
+        letter-spacing: 0,7px;
+    }
+    &__btn{
+        display: block;
+        background-color: $accent-color;
+        color: $light-color;
+        text-decoration: none;
+        max-width: 250px;
+        border-radius: 3px;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 48px;
+        margin-bottom: 19px;
+        padding: 14px 0;
+        letter-spacing: 0,7px;
+    }
+}
+
+.block-book{
+    display: flex;
+    justify-content: space-between;
+    &-demo{
+        display: block;
+        width: 447px;
+        height: 643px;
+        background-image: url(../img/book.svg);
+        background-repeat: no-repeat;
+        flex-basis: 500px;
     }
 }
