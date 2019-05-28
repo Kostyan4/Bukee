@@ -4,11 +4,9 @@
 @import "general/fonts";
 @import "general/base";
 @import "../blocks/blocks";
-// @import "base/variables";
-// @import "base/mixins";
-// @import "base/typography";
-// @import "vendor/normalize";
-// @import "components/sprite";
+
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Roboto Slab', serif;
 
 $light-color: #fff; //Создаем переменную цвета, чтобы в последующем могли всё это изменить за раз.
 $accent-color: #65e496;
@@ -79,6 +77,10 @@ body{
         font-family: 'Open Sans', serif;
         font-size: 18px;
     }
+    &__name-top{
+        margin-top: 16px;
+        margin-left: 0;
+    }
     &__title{
         letter-spacing: 1,8px;
         font-size: 40px;
@@ -97,7 +99,7 @@ body{
         font-size: 15px;
         line-height: 24px;
         margin-bottom: 24px;
-        letter-spacing: 0,7px;
+        letter-spacing: 0,75px;
     }
     &__btn{
         display: block;
@@ -115,6 +117,10 @@ body{
     }
 }
 
+.page{
+    padding-top: 161px;
+}
+
 .block-book{
     display: flex;
     justify-content: space-between;
@@ -125,5 +131,23 @@ body{
         background-image: url(../img/book.svg);
         background-repeat: no-repeat;
         flex-basis: 500px;
+    }
+}
+
+.block-author{
+    display: flex;
+    justify-content: space-between;
+}
+
+.block-ava{
+    position: relative;
+    &__svg{
+        position: absolute;
+        z-index: -1;
+        right: 0;
+    }
+    &__img{
+        margin-top: 47px;
+        margin-right: 44PX;
     }
 }
