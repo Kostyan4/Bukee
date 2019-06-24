@@ -18,6 +18,10 @@ h1, h2, h3, h4, p {
     margin: 0;
 }
 
+small {
+    letter-spacing: -0.19px;
+}
+
 h3 {
     font-size: 24PX;
     letter-spacing: 1.2px;
@@ -39,11 +43,11 @@ body{
     background-image: url(../img/bg.png) ; // Задаем фаил фона
     background-repeat: no-repeat; // Пишем свойство, чтобы картинка фона не повторялась
     background-size: cover; //Масштабирует картинку так, чтобы она накрыла собой весь блок с сохранением пропорций.
-    padding-bottom: 50px;
+    padding-bottom: 158px;
 }
 
 .header{
-    padding-bottom: 166px;
+    padding-bottom: 82px;
     padding-top: 36px;
     display: flex; //После установки данных значений свойства каждый дочерний элемент автоматически становится flex-элементом, выстраиваясь в один ряд (вдоль главной оси). При этом блочные и строчные дочерние элементы ведут себя одинаково, т.е. ширина блоков равна ширине их содержимого с учетом внутренних полей и рамок элемента.
     justify-content: space-between; // Задаем пустое растояние между элементами
@@ -62,11 +66,13 @@ body{
         display: flex; // Устанавливаем, что это flex эллемент. display: flex; делает все дочерние элементы резиновыми — flex, а не инлайновыми или блочными, как было изначально.
         justify-content: flex-end; //элементы выравниваются от конца главной оси;
         font-family: 'Open Sans', serif;
+        margin-right: 8px;
+        font-size: 15px;
         &__item{
-            margin-left: 22px; // Задаем внешний отступ слева, для каждого пункта
+            margin-left: 25px; // Задаем внешний отступ слева, для каждого пункта
             padding-bottom: 5px;
             border-bottom: 3px solid transparent; // Делаем черту невидимой
-            transition: 0,5s; // Создаём переход в 0,3 секунды
+            transition: 0.5s; // Создаём переход в 0,3 секунды
             &:hover{border-bottom: 3px solid $accent-color;}// Для псевдо класов можем использовать такой вид записи. При наведении на ссылку, через 0,3 сек. появится стиль
         }
         &__item.active{ // Создаём стиль для подкласса, чтобы сделать активный выбр ссылок
@@ -81,34 +87,39 @@ body{
 }
 
 .block-text{
-    flex-basis: calc(93% - 500px);
+    flex-basis: calc(93% - 417px);
     &__name{
         font-family: 'Open Sans', serif;
         font-size: 18px;
+        // margin-top: 45px;
+        letter-spacing: 0.9px;
     }
     &__name_top{
         margin-top: 16px;
         margin-left: 0;
     }
     &__title{
-        letter-spacing: 1,8px;
-        font-size: 40px;
+        letter-spacing: 1.8px;
+        font-size: 48px;
         font-weight: 700;
         margin-bottom: 44px;
+        margin-top: 41px;
         span{
             display: block; // для того чтобы элемент позицианировался не в строчку, а с новый строки
             color: $accent-color;
             font-size: 18px;
-            margin-top: 9px;
-            letter-spacing: 0,9px;
+            margin-top: 27px;
+            letter-spacing: 0.9px;
         }
     }
     &__description{
         font-family: 'Open Sans', serif;
         font-size: 15px;
         line-height: 24px;
-        margin-bottom: 24px;
-        letter-spacing: 0,75px;
+        margin-bottom: 28px;
+        margin-top: -5px;
+        letter-spacing: 0.75px;
+        max-width: 594px
     }
     &__btn{
         display: block;
@@ -119,10 +130,10 @@ body{
         border-radius: 3px;
         text-align: center;
         font-size: 18px;
-        margin-top: 48px;
-        margin-bottom: 19px;
+        margin-top: 46px;
+        margin-bottom: 13px;
         padding: 14px 0;
-        letter-spacing: 0,7px;
+        letter-spacing: 0.7px;
     }
 }
 
@@ -154,12 +165,37 @@ body{
     justify-content: space-between;
     margin-top: 82px;
     &-demo{
+        position: relative;
         display: block;
         width: 447px;
         height: 643px;
         background-image: url(../img/book.svg);
         background-repeat: no-repeat;
         flex-basis: 500px;
+        &__title{
+            font-size: 36px;
+            position: absolute;
+            left: 131px;
+            top: 118px;
+            letter-spacing: 1.4px;
+            span{
+                font-family: 'Open Sans', serif;
+                font-size: 14px;
+                color: $accent-color;
+                display: block;
+                margin-top: 10px;
+                letter-spacing: 0.7px;
+            }
+        }
+        &__author {
+            font-family: 'Open Sans', serif;
+            font-size: 14px;
+            color: $accent-color;
+            position: absolute;
+            bottom: 56px;
+            left: 87px;
+            letter-spacing: 0.7px;
+        }
     }
 }
 
@@ -212,15 +248,40 @@ body{
     }
     &-text {
         flex-basis: 41%;
+        &__links {
+            display: flex;
+            &>p {
+                font-family: 'Roboto Slab', serif;
+                font-size: 18px;
+                font-weight: 900;
+                margin-right: -12px;
+            }
+            &>ul {
+                display: flex;
+                list-style-type: none;
+                align-items: flex-start;
+                margin: 0;
+            }
+
+            &>ul>li {
+                flex-direction: row;
+                margin-right: 10px;
+            }
+            & .fa-btc::before, .fa-amazon::before, .fa-at::before {
+                color: $accent-color;
+            }
+            
+        }
     }
     &-table {
         flex-basis: 49%;
-    
+
     &__list {
         margin: 0;
         padding: 0;
         counter-reset: list;
         column-count: 2;
+        margin-bottom: 10px;
     &>li {
         position: relative;
         padding-left: 36px;
@@ -245,5 +306,15 @@ body{
         }
      }
     }
+    &__btn {
+        margin-top: 40px;
+        background-color: $accent-color;
+        color: #fff;
+        border-style: none;
+        padding: 14px 47px;
+        border-radius: 2px;
+        font-size: 18px;
+    }
  }
+
 }
