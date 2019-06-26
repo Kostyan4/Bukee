@@ -94,21 +94,24 @@ body{
         // margin-top: 45px;
         letter-spacing: 0.9px;
     }
-    &__name_top{
-        margin-top: 16px;
+    &__name_top {
+        margin-top: 12px;
         margin-left: 0;
     }
-    &__title{
+    &__title {
         letter-spacing: 1.8px;
         font-size: 48px;
         font-weight: 700;
         margin-bottom: 44px;
-        margin-top: 41px;
-        span{
+        margin-top: 42px;
+        &_title2 {
+            margin-top: 31px;
+        }
+        span {
             display: block; // для того чтобы элемент позицианировался не в строчку, а с новый строки
             color: $accent-color;
             font-size: 18px;
-            margin-top: 27px;
+            margin-top: 25px;
             letter-spacing: 0.9px;
         }
     }
@@ -126,15 +129,29 @@ body{
         background-color: $accent-color;
         color: $light-color;
         text-decoration: none;
-        max-width: 250px;
+        max-width: 251px;
         border-radius: 3px;
         text-align: center;
         font-size: 18px;
         margin-top: 46px;
-        margin-bottom: 13px;
-        padding: 14px 0;
+        margin-bottom: 16px;
+        padding: 13px 0;
         letter-spacing: 0.7px;
     }
+    &__btn2{
+        display: block;
+        background-color: $accent-color;
+        color: $light-color;
+        text-decoration: none;
+        max-width: 238px;
+        border-radius: 3px;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 46px;
+        margin-bottom: 16px;
+        padding: 13px 0;
+        letter-spacing: 0.7px;
+}
 }
 
 .page{
@@ -154,9 +171,6 @@ body{
         text-align: center;
         font-size: 18px;
         letter-spacing: 0.9px;
-    }
-    & p{
-        padding-bottom: 65px;
     }
 }
 
@@ -206,6 +220,7 @@ body{
 
 .block-ava{
     position: relative;
+    bottom: 4px;
     &__svg{
         position: absolute;
         z-index: -1;
@@ -220,20 +235,34 @@ body{
 
 .block-counter{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 33px 0 0 84px;
+    max-width: 1030px;
+    flex-basis: 30% 30% 30%;
+    // position: relative;
     p{
         text-align: center;
         font-family: 'Open Sans', sans-serif;
         font-size: 18px;
+        letter-spacing: 0.8px;
         span{
             font-family: 'Roboto Slab', serif;
             display: block;
             font-weight: 100;
             font-size: 80px;
             color: $accent-color;
-            margin-bottom: 45px;
+            margin-bottom: 48px;
+            letter-spacing: 3px;
         }
     }
+    &__readers_shift span{
+        padding: 0 7px 0 0;
+        
+    }
+    &__readers_center span{
+        padding: 0px 0px 0 21px;
+    }
+        
 }
 
 .block-about {
