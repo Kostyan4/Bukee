@@ -173,6 +173,7 @@ body{
     padding-bottom: 160px;
     &_gray{
         background-color: $bg-light-color;
+        height: 534px;
     }
     &__title{
         // font-size: 48px;
@@ -305,7 +306,7 @@ body{
                 font-weight: 900;
                 margin-right: -12px;
                 letter-spacing: 0.7px;
-            }
+            
             }
             &>ul {
                 display: flex;
@@ -327,7 +328,7 @@ body{
     }
     &-table {
         flex-basis: 49%;
-
+    
     &__list {
         margin: 25px 0 0 0; 
         padding: 0;
@@ -340,7 +341,7 @@ body{
         counter-increment: list;
         list-style-type: none;
         margin: 0px 0px 8px 4px;
-        letter-spacing: 0.75px
+        letter-spacing: 0.75px;
         &::before {
             content: counter(list)". ";
         }
@@ -358,6 +359,7 @@ body{
         }
      }
     }
+
     &__btn {
         margin: 19px 0 0px 4px;
         background: linear-gradient(to top left, #65e49c, #65e4af);
@@ -369,6 +371,118 @@ body{
         box-shadow: 0 -2px #b2f1be inset;
         letter-spacing: 1.6px;
     }
- }
+}
+}
 
+// Other books
+.other-books {
+    position: relative;
+    padding-top: 165px;
+    height: 1104px;
+}
+.books {
+    display: flex;
+    justify-content: space-around;
+}
+.book{
+    background-image: url(../img/book-img.svg);
+    width: 269px;
+    height: 409px;
+    border-radius: 5px;
+    background-color: #44444f;
+    padding: 0 0 0 38px;
+
+    &__title {
+        max-width: 160px;
+        height: 19px;
+        color: #ffffff;
+        font-family: "Roboto Slab";
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.96px;
+        margin: 74px auto 10px;
+    }
+    &__subtitle {
+        max-width: 200px;
+        height: 9px;
+        color: $accent-color;
+        font-family: "Open Sans";
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.6px;
+        margin: 0 auto 246px;
+    }
+    &__bootom {
+        max-width: 169px;
+        height: 12px;
+        color: $accent-color;
+        font-family: "Open Sans";
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.6px;
+        margin: 0 auto 76px;
+    }
+}
+.description {
+    &__title{
+        max-width: 169px;
+        height: 25px;
+        color: #44444f;
+        font-family: "Roboto Slab";
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 1.2px;
+        margin: 0 auto;
+    }
+    &__text {
+        width: 314px;
+        height: 60px;
+        color: #696980;
+        font-family: "Open Sans";
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.75px;
+        margin: 13px 0px 30px -42px;
+        text-align: center;
+    }
+    &__links{
+        width: 92px;
+        height: 11px;
+        color: #65e496;
+        font-family: "Open Sans";
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0.75px;
+        text-decoration: none;
+        margin: 0 0 0 68px;
+    }
+}
+.books-btn{
+    position: absolute;
+    bottom: 221px;
+    left: 632px; 
+    background: linear-gradient(to top left, #65e49c, #65e4af);
+    color: #fff;
+    border-style: none;
+    padding: 15px 29px;
+    border-radius: 2px;
+    font-size: 18px;
+    box-shadow: 0 -2px #b2f1be inset;
+    letter-spacing: 1.6px;
+    a{
+        width: 153px;
+        height: 15px;
+        color: #ffffff;
+        font-family: "Roboto Slab";
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 0.72px;
+    }
 }
