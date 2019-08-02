@@ -165,7 +165,49 @@ body{
         padding: 13px 0;
         letter-spacing: 0.7px;
         box-shadow: 0 -2px #b2f1be inset;
-}
+    }
+    &-item {
+        &__date {
+            color: #696980;
+            font-family: "Open Sans";
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 44px;
+            letter-spacing: 0.75px;
+        }
+        &__title {
+            color: #44444f;
+            font-family: "Roboto Slab";
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 44px;
+            letter-spacing: 0.9px;
+        }
+        &__desc {
+            color: #696980;
+            font-family: "Open Sans";
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 24px;
+            /* Text style for "Lorem ipsu" */
+            letter-spacing: 0.75px;
+        }
+        &__btn2 {
+        display: block;
+        background: linear-gradient(to top left,#65e49c, #65e4af);
+        color: $light-color;
+        text-decoration: none;
+        max-width: 137px;
+        border-radius: 3px;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 46px;
+        margin-bottom: 16px;
+        padding: 13px 0;
+        letter-spacing: 0.7px;
+        box-shadow: 0 -2px #b2f1be inset;
+        }
+    }
 }
 
 .page{
@@ -233,23 +275,30 @@ body{
     }
 }
 
-.block-author{
+.block-author {
     display: flex;
     justify-content: space-between;
 }
 
-.block-ava{
+.block-ava {
     position: relative;
     bottom: 4px;
-    &__svg{
+    &__svg {
         position: absolute;
         z-index: -1;
         right: 0;
     }
-    &__img{
+    &__svg--left {
+        right: inherit;
+        left: 0;
+    }
+    &__img {
         margin-top: 47px;
         margin-right: 44PX;
         margin-bottom: 173px;
+    }
+    &__img--left {
+        margin: 49px 0 0 51px;
     }
 }
 
