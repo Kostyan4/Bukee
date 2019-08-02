@@ -535,3 +535,71 @@ body{
         letter-spacing: 0.72px;
     }
 }
+
+                    // Latest from Blog
+
+.blog {
+    display: flex;
+    justify-content: space-between;
+        h4{
+            color: #44444f;
+            font-family: "Roboto Slab";
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: 0.9px;
+        }
+        &-img {
+            width: 369px;
+            height: 224px;
+            overflow: hidden; //Чтобы спрятать изоброжение за нашт граници
+            position: relative;
+
+            img {
+                width: 369px;
+                height: 224px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                object-fit: cover;
+            }
+        }
+        &-item-info {
+            display: inline-flex;
+            font-family: "Open Sans";
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 44px;
+            color: #80809b;
+            width: 369px;
+            letter-spacing: 0.75px;
+            a {
+                text-decoration: none;
+                color: $accent-color;
+            }
+        }
+        &__desc {
+            color: #696980;
+            font-family: "Open Sans";
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0.75px; 
+        }
+        &__btn {
+        background: linear-gradient(to top left, #65e49c, #65e4af);
+        color: #fff;
+        border-style: none;
+        padding: 15px 29px;
+        border-radius: 2px;
+        font-size: 18px;
+        box-shadow: 0 -2px #b2f1be inset;
+        letter-spacing: 1.6px;
+        display: block;
+        margin: 84px auto 0;
+        max-width: 222px;
+        text-decoration: none;
+    }
+
+}
