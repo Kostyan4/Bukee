@@ -13,6 +13,11 @@ $accent-color: #65e496;
 $bg-light-color: #f5f6fa;
 $bg-dark-color: #44444f;
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
 h1, h2, h3, h4, p {
     padding: 0;
     margin: 0;
@@ -36,6 +41,7 @@ body{
 .wrap{
     max-width: 1170px; // Создаём максимальную ширену для всей обёртки
     margin: 0 auto; // Убираем отступы и задаем свойство АВТО, что выравнивает содержимое всей обёртки по центру
+    padding: 0 15px 0 15px;
 }
 
 .page-main { // Это наш основной блок с контентом, находящимся на верху
@@ -47,13 +53,15 @@ body{
 }
 
 .header{
-    padding-bottom: 82px;
-    padding-top: 36px;
+    padding: 36px 15px 82px 15px;
     display: flex; //После установки данных значений свойства каждый дочерний элемент автоматически становится flex-элементом, выстраиваясь в один ряд (вдоль главной оси). При этом блочные и строчные дочерние элементы ведут себя одинаково, т.е. ширина блоков равна ширине их содержимого с учетом внутренних полей и рамок элемента.
     justify-content: space-between; // Задаем пустое растояние между элементами
     align-items: center; //Свойство align-items задает выравнивание элементов вдоль поперечной оси. Применяется к: родительскому элементу для flex блоков.
     max-width: 1170px; // Создаём максимальную ширену для блока
     margin: 0 auto; // Убираем отступы и задаем свойство АВТО, что выравнивает содержимое по центру
+    @media(max-width: 920px){
+        flex-direction: column;
+    }
     &__logo { // Так-как у нас элемент LOGO вложен в блок HEADER, мы просто здесь же создаем для него стиль, с помощью & и двойного подчёркивания.
         background-repeat: no-repeat;
         display: block; //Блочные элементы располагаются один над другим, вертикально (если нет особых свойств позиционирования, например float). Блок стремится расшириться на всю доступную ширину. Можно указать ширину и высоту явно.
@@ -87,7 +95,16 @@ body{
 }
 
 .block-text{
+    @media(max-width: 1020px){
+        flex-basis: calc(93% - 315px);
+    }
     flex-basis: calc(93% - 417px);
+    &--width {
+        flex-basis: calc(93% - 520px);
+        @media(max-width: 1020px){
+            flex-basis: calc(93% - 315px);
+        }
+    }
     &__name{
         font-family: 'Open Sans', serif;
         font-size: 18px;
@@ -105,9 +122,10 @@ body{
         font-weight: 700;
         margin-bottom: 44px;
         margin-top: 42px;
-        &_title2 {
-            margin-top: 31px;
-        }
+        line-height: 44px;
+            &_title2 {
+                margin-top: 31px;
+            }
         span {
             display: block; // для того чтобы элемент позицианировался не в строчку, а с новый строки
             color: $accent-color;
@@ -214,6 +232,10 @@ body{
 .page{
     padding-top: 164px;
     padding-bottom: 160px;
+    position: relative;
+    @media(max-width:1020px){
+        padding: 120px 0;
+    }
     &_gray{
         background-color: $bg-light-color;
         height: 534px;
@@ -235,6 +257,20 @@ body{
         font-size: 18px;
         letter-spacing: 0.9px;
         margin: 0 0 83px;
+    }
+    &__svg {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        min-height: 694px;
+        @media(min-width: 1020px){
+            display: none;
+        }
+    }
+    &-carousel {
+        @media(min-width: 1020px){
+            background-color: $bg-dark-color;
+        }
     }
 }
 
@@ -287,6 +323,10 @@ body{
     position: relative;
     bottom: 4px;
     &__svg {
+        @media(max-width: 1020px){
+        width: 300px;
+        height: 412px;
+        }
         position: absolute;
         z-index: -1;
         right: 0;
@@ -296,6 +336,9 @@ body{
         left: 0;
     }
     &__img {
+        @media(max-width: 1020px){
+        width: 300px;
+        }
         margin-top: 47px;
         margin-right: 44PX;
         margin-bottom: 173px;
@@ -311,8 +354,13 @@ body{
     margin: 33px 0 0 84px;
     max-width: 1030px;
     flex-basis: 30% 30% 30%;
-    // position: relative;
+    @media(max-width: 750px){
+        flex-direction: column;
+    }
     p{
+        @media(max-width: 750px){
+            margin-bottom: 80px;
+        }
         text-align: center;
         font-family: 'Open Sans', sans-serif;
         font-size: 18px;
@@ -340,6 +388,11 @@ body{
 .block-about {
     display: flex;
     justify-content: space-between;
+    @media(max-width: 1020px) {
+        flex-direction: column;
+        margin: 82px auto 0;
+        max-width: 750px;
+    }
     h3 {
         margin-bottom: 20px;
     }
@@ -349,14 +402,18 @@ body{
         margin: 0 0 30px;
     }
     &-text {
-        flex-basis: 41%;
+        flex-basis: 570px;
+        @media(max-width: 1020px) {
+            flex-basis: 100%;
+        }
+        flex-basis: calc(100% - 600px);
         &__links {
             display: flex;
             &>p {
                 font-family: 'Roboto Slab', serif;
                 font-size: 19px;
                 font-weight: 900;
-                margin-right: -12px;
+                margin-right: 7px;
                 letter-spacing: 0.7px;
             
             }
@@ -379,14 +436,18 @@ body{
         }
     }
     &-table {
-        flex-basis: 49%;
-    
+        flex-basis: 570px;
+        @media(max-width:1020px) {
+            flex-basis: 100%;
+            margin: 40px 0 0 0;
+        }
     &__list {
         margin: 25px 0 0 0; 
         padding: 0;
         counter-reset: list;
         column-count: 2;
         margin-bottom: 10px;
+        column-gap: 20px;
     &>li {
         position: relative;
         padding-left: 34px;
@@ -404,7 +465,7 @@ body{
             line-height: 22px;
             position: absolute;
             left: 0;
-            top: 1px;
+            top: calc(50% - 10px);
             background-color: $accent-color;
             color: $light-color;
             padding: 0px 7px;
@@ -544,6 +605,18 @@ body{
 .blog {
     display: flex;
     justify-content: space-between;
+    margin: 85px 0 0 0;
+    @media(max-width:900px){
+        flex-direction: column;
+        min-width: 600px;
+        margin: 85px auto 0;
+    }
+        &-item {
+            flex-basis: 32%;
+            @media(max-width:900px){
+                margin: 0 0 40px 0;
+            }
+        }
         h4{
             color: #44444f;
             font-family: "Roboto Slab";
@@ -553,13 +626,13 @@ body{
             letter-spacing: 0.9px;
         }
         &-img {
-            width: 369px;
+            width: 100%;
             height: 224px;
             overflow: hidden; //Чтобы спрятать изоброжение за нашт граници
             position: relative;
 
             img {
-                width: 369px;
+                width: 100%;
                 height: 224px;
                 position: absolute;
                 left: 50%;
@@ -568,7 +641,8 @@ body{
                 object-fit: cover;
             }
         }
-        &-item-info {
+        &-info {
+            flex-wrap: wrap;
             display: inline-flex;
             font-family: "Open Sans";
             font-size: 15px;
@@ -791,6 +865,7 @@ body{
                 height: 8px;
                 border-radius: 10px;
                 background-color: $accent-color;
+                outline: none;
             }
         }
     
